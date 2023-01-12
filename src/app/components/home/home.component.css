@@ -1,0 +1,19 @@
+video{
+  width: 100%;
+}
+mat-card{
+  /*background: #6f6d6d;*/
+
+
+}
+mat-card-subtitle{
+  color: #eecd68;
+  background: #6f6d6d;
+}
+app-header{
+  z-index: 100000000000000;
+  position: fixed;
+  right: 40%;
+  top:1%;
+  width: 150px;
+}

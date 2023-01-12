@@ -1,0 +1,7 @@
+app-header{
+  z-index: 100000000000000;
+  position: fixed;
+  left: 3%;
+  bottom:1%;
+  width: 150px;
+}
