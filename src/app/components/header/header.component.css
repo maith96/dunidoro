@@ -2,8 +2,5 @@
   flex: 1 1 auto;
 }
 mat-toolbar {
-  color: #355819;
-  background: #ee892b;
   cursor: pointer;
-  width: 150px;
 }

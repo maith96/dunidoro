@@ -20,6 +20,12 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import { PlayVideoBlockComponent } from './components/play-video-block/play-video-block.component';
 import {MatCommonModule} from "@angular/material/core";
+import { PostAnimationComponent } from './components/post-animation/post-animation.component';
+import { AboutComponent } from './components/about/about.component';
+import { SupportUsComponent } from './components/support-us/support-us.component';
+import { SearchComponent } from './components/search/search.component';
+import { AnimListComponent } from './components/anim-list/anim-list.component';
+import { SearchListComponent } from './components/search-list/search-list.component';
 
 //angular/fire
 
@@ -31,7 +37,13 @@ import {MatCommonModule} from "@angular/material/core";
     HeaderComponent,
     WatchComponent,
     VideoBlockComponent,
-    PlayVideoBlockComponent
+    PlayVideoBlockComponent,
+    PostAnimationComponent,
+    AboutComponent,
+    SupportUsComponent,
+    SearchComponent,
+    AnimListComponent,
+    SearchListComponent
   ],
   imports: [
     BrowserModule,

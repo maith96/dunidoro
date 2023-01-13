@@ -1,13 +1,21 @@
-<mat-toolbar routerLink="" class="rounded-full">
+<mat-toolbar  class="fixed z-40 bg-gray-900">
   <span class="example-spacer"></span>
 
-<!--  <button mat-icon-button>-->
-<!--    <mat-icon>menu</mat-icon>-->
-<!--  </button>-->
-  <mat-icon class="mr-3">home</mat-icon>
-  <a >Dunidoro</a>
-
+  <a routerLink="" class="text-[#ee892b] ">Dunidoro</a>
+  <div class=" sm:hidden" >
+     <button mat-icon-button class=" " (click)="toggleSearchInput()">
+      <mat-icon class="text-gray-400">search</mat-icon>
+    </button>
+  </div>
+ 
+  <app-search [showSearchInput] = "showSearchInput"></app-search>
 
   <span class="example-spacer"></span>
+
+  <a routerLink="about" class="text-[#8b8989] text-sm px-5 underline decoration-2 hover:decoration-[#ee892b]">About</a>
+  <a routerLink="support-us" class="text-[#8b8989] text-sm  px-5 underline decoration-2 hover:decoration-[#ee892b]">Support us?</a>
+  
+  <span class="example-spacer"></span>
+
 
 </mat-toolbar>

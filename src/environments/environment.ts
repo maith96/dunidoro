@@ -1,13 +1,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyCgTVTORHBjoerJCWQGBg0H4RTLg23t3n8",
-    authDomain: "liopita.firebaseapp.com",
-    databaseURL: "https://liopita-default-rtdb.firebaseio.com",
-    projectId: "liopita",
-    storageBucket: "liopita.appspot.com",
-    messagingSenderId: "337018483437",
-    appId: "1:337018483437:web:08f1c5b1c3120df83092e4",
-    measurementId: "G-63KYMH0TY2"
+    apiKey: "AIzaSyBI0oEGRJXCQVAhtFWkrcL1yYWcvD5kMyE",
+  authDomain: "dunidoro-2bee5.firebaseapp.com",
+  projectId: "dunidoro-2bee5",
+  storageBucket: "dunidoro-2bee5.appspot.com",
+  messagingSenderId: "709855619591",
+  appId: "1:709855619591:web:7cda96aab5b5b216c158a2",
+  measurementId: "G-XSTE1STCGT"
   }
 };

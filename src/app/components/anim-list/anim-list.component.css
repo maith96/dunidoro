@@ -1,0 +1,14 @@
+video{
+    width: 100%;
+  }
+  
+  mat-card-subtitle{
+    color: #eecd68;
+    background: #111827;
+  }
+  mat-card{
+    background: #111827;
+
+  }
+  
+  

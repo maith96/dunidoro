@@ -10,13 +10,15 @@ import {Episode} from "./episode";
 
 export class ApiService {
 
-  baseUrl = 'https://leinalok.pythonanywhere.com';
+  baseUrl = 'http://dunidoro.pythonanywhere.com';
 
   animList: any[] = [];
   episodes:Observable<Episode[]>
 
   constructor(private db:Database, private http: HttpClient) {
   }
+  
+
 
   getEpisodes(id:any){
     this.episodes = this.http.get(`${this.baseUrl}/animations/${id}/episodes`).pipe(map(res=>{
@@ -34,38 +36,46 @@ export class ApiService {
     })
 
   }
-
-  saveAnimations(){
-    const animation_data = require('../../assets/snapshot.json')
-    const episodes_data = require('../../assets/snapshot (2).json')
-    const animations = []
-
-    for (const animKey in animation_data) {
-      const old_animation = animation_data[animKey]
-      const new_animation = {
-        'title': old_animation.title,
-        'thumb_url':old_animation.thumb_url,
-        'video_url':old_animation.video_url,
-        'n_episodes':parseInt(old_animation.ep_length),
-      }
-      const old_episodes = episodes_data[animKey].episodes
-      const new_episodes = []
-      for (const ep of old_episodes) {
-        const new_ep = {
-          'ep_title': ep.title,
-          'ep_video_url': ep.ep_video_url
-        }
-        new_episodes.push(new_ep)
-      }
-
-      animations.push({"animation":new_animation, "episodes": new_episodes})
-
-    }
-    this.sendNewAnimToDB(animations).subscribe(res=>{
-      console.log(res)
-    })
+  searchAnim(str:any, page_size:number, page:number){
+    return this.http.get(`${this.baseUrl}/animations/search/${str}?page_size=${page_size}&page_number=${page}`)
   }
+
+  // saveAnimations(){
+  //   const animation_data = require('../../assets/snapshot.json')
+  //   const episodes_data = require('../../assets/snapshot (2).json')
+  //   const animations = []
+    
+  //   let i =0
+
+  //   for (const animKey in animation_data) {
+      
+  //     console.log("iii")
+  //     const old_animation = animation_data[animKey]
+  //     const new_animation = {
+  //       'title': old_animation.title,
+  //       'thumb_url':old_animation.thumb_url,
+  //       'video_url':old_animation.video_url,
+  //       'n_episodes':parseInt(old_animation.ep_length),
+  //     }
+  //     const old_episodes = episodes_data[animKey].episodes
+  //     const new_episodes = []
+  //     for (const ep of old_episodes) {
+  //       const new_ep = {
+  //         'ep_title': ep.title,
+  //         'ep_video_url': ep.ep_video_url
+  //       }
+  //       new_episodes.push(new_ep)
+  //     }
+
+  //     animations.push({"animation":new_animation, "episodes": new_episodes})
+  //     i++
+  //   }
+  //   this.sendNewAnimToDB(animations).subscribe(res=>{
+  //     console.log(1)
+  //   })
+    
+  // }
   sendNewAnimToDB(animations:any){
-    return this.http.post(this.baseUrl+'animations',{"animations":animations})
+    return this.http.post(this.baseUrl+'/animations',{"animations":animations})
   }
 }

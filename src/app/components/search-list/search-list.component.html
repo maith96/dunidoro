@@ -1,0 +1,30 @@
+<div class="pt-20" infinite-scroll [infiniteScrollDistance]="distance" [infiniteScrollThrottle]="throttle" (scrolled)="onScroll()">
+    <div class="grid gap-y-3 gap-x-6 grid-cols-1 md:grid-cols-4 lg:grid-cols-5 sm:grid-cols-2">
+      <mat-card  *ngFor="let anim of searchAnimList$; let i=index">
+  
+        <div  class="bg-black rounded-t relative embed-responsive embed-responsive-4by3 w-full overflow-hidden"
+             style="padding-top: 75%">
+          <a [routerLink]="'/watch/'+anim.id+'/'+anim.title+'/#1'" (click)="onClick()">
+            <video [poster]="anim.thumb_url" src=""
+                   class="embed-responsive-item absolute top-0 right-0 bottom-0 left-0 w-full h-full">
+            </video>
+          </a>
+          <mat-card-subtitle class=" absolute bottom-0 left-0 p-1 ">#{{anim.n_episodes}}/{{anim.n_episodes}}</mat-card-subtitle>
+  
+        </div>
+  
+        <mat-card-content class="">
+          <div class="flex  py-4 items-center">
+            <a [routerLink]="'/watch/'+anim.id+'/'+anim.title+'/#1'" (click)="onClick()"
+                class="text-gray-300">
+              {{anim.title}}
+            </a>
+  
+          </div>
+        </mat-card-content>
+      </mat-card>
+  
+    </div>
+  
+  </div>
+  

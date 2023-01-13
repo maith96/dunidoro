@@ -1,18 +1,17 @@
-<app-header></app-header>
 
-<div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+<div class="grid grid-cols-1 sm:grid-cols-4 gap-4 pt-20">
   <mat-card class="col-span-3 watch-video mb-6">
     <div class="  bg-black embed-responsive embed-responsive-4by3 relative w-full overflow-hidden"
          style="padding-top: 56.25%">
-      <video *ngIf="episodes$ |async as ep " controls [src]="'https://archive.org'+ep[episode_index].ep_video_url"
+      <video *ngIf="episodes$ |async as ep " controls [src]="ep[episode_index].ep_video_url"
              class="embed-responsive-item absolute top-0 right-0 bottom-0 left-0 w-full h-full">
       </video>
     </div>
-    <mat-card-header class="mb-3" *ngIf="episodes$ |async as ep ">
+    <mat-card-header class="mb-3 text-gray-400 " *ngIf="episodes$ |async as ep ">
       {{title}}
-      <div *ngIf="ep[episode_index+1]">
+      <ng-container *ngIf="ep[episode_index+1]">
         : {{ep[episode_index].ep_title }}
-      </div>
+      </ng-container>
     </mat-card-header>
     <mat-card-content>
       <div class="grid gap-1 grid-cols-4 sm:grid-cols-6 md:grid-cols-8">
@@ -33,5 +32,5 @@
 
 </div>
 <div class="Others">
-  <app-home></app-home>
+  <app-anim-list></app-anim-list>
 </div>
